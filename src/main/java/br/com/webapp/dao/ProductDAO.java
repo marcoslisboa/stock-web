@@ -18,7 +18,7 @@ public class ProductDAO extends BaseDAO {
         String sql = "SELECT * FROM t_produto";
 
         try {
-            PreparedStatement statement = getConnection().prepareStatement(sql);
+            PreparedStatement statement = super.getConnection().prepareStatement(sql);
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -32,7 +32,7 @@ public class ProductDAO extends BaseDAO {
                         .build()
                 );
             }
-            closeConnection();
+            super.closeConnection();
 
         } catch (SQLException e) {
             log.warning(e.getMessage());
@@ -46,7 +46,7 @@ public class ProductDAO extends BaseDAO {
         String sql = "SELECT * FROM t_produto WHERE id = ?";
 
         try {
-            PreparedStatement statement = getConnection().prepareStatement(sql);
+            PreparedStatement statement = super.getConnection().prepareStatement(sql);
             statement.setLong(1, id);
 
             ResultSet result = statement.executeQuery();
@@ -60,7 +60,7 @@ public class ProductDAO extends BaseDAO {
                     .price(result.getDouble("price"))
                     .build();
             }
-            closeConnection();
+            super.closeConnection();
 
         } catch (SQLException e) {
             log.warning(e.getMessage());
@@ -73,7 +73,7 @@ public class ProductDAO extends BaseDAO {
         String sql = "INSERT INTO t_produto(name, description, price) VALUES(?,?,?) RETURNING id";
 
         try {
-            PreparedStatement statement = getConnection().prepareStatement(sql);
+            PreparedStatement statement = super.getConnection().prepareStatement(sql);
             statement.setString(1, product.getName());
             statement.setString(2, product.getDescription());
             statement.setDouble(3, product.getPrice());
@@ -84,7 +84,7 @@ public class ProductDAO extends BaseDAO {
                 product.setId(resultSet.getLong(1));
             }
 
-            closeConnection();
+            super.closeConnection();
 
         } catch (SQLException e) {
             log.warning(e.getMessage());
@@ -98,14 +98,14 @@ public class ProductDAO extends BaseDAO {
         String sql = "UPDATE t_produto SET name = ?, description = ?, price = ? WHERE id = ?";
 
         try {
-            PreparedStatement statement = getConnection().prepareStatement(sql);
+            PreparedStatement statement = super.getConnection().prepareStatement(sql);
             statement.setString(1, product.getName());
             statement.setString(2, product.getDescription());
             statement.setDouble(3, product.getPrice());
             statement.setLong(4, product.getId());
 
             statement.executeUpdate();
-            closeConnection();
+            super.closeConnection();
 
         } catch (SQLException e) {
             log.warning(e.getMessage());
@@ -119,11 +119,11 @@ public class ProductDAO extends BaseDAO {
         String sql = "DELETE FROM t_produto WHERE id = ?";
 
         try {
-            PreparedStatement statement = getConnection().prepareStatement(sql);
+            PreparedStatement statement = super.getConnection().prepareStatement(sql);
             statement.setLong(1, product.getId());
 
             statement.executeUpdate();
-            closeConnection();
+            super.closeConnection();
 
         } catch (SQLException e) {
             log.warning(e.getMessage());
