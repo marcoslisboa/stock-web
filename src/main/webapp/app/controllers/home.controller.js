@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('appEstoque')
+    .module('appStock')
     .controller('HomeController', ['$http', function ($http) {
 
       var vm = this;

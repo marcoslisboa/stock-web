@@ -1,5 +1,5 @@
 (function() {
   'use strict';
   angular
-    .module('appEstoque', ['ngResource']);
+    .module('appStock', ['ngResource']);
 })();
