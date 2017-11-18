@@ -2,15 +2,17 @@
 <head>
   <meta charset="UTF-8"/>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/stock.css">
+
+  <script type="text/javascript" src="./assets/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/popper/popper.min.js"></script>
+  <script type="text/javascript" src="./assets/bootstrap/js/bootstrap.min.js"></script>
 
 
   <script type="text/javascript" src="./assets/angular/angular.min.js"></script>
   <script type="text/javascript" src="./assets/angular/angular-resource.min.js"></script>
+
   <script type="text/javascript" src="./app/index.module.js"></script>
   <script type="text/javascript" src="./app/controllers/home.controller.js"></script>
 
@@ -84,22 +86,30 @@
 
     <form>
       <h2>{{vm.product.id ? 'Editar Produto' : 'Novo Produto'}}</h2>
+
       <div class="form-group">
         <label for="name">Nome</label>
         <input type="text" class="form-control" id="name" ng-model="vm.product.name">
       </div>
+
       <div class="form-group">
         <label for="description">Descrição</label>
         <input type="text" class="form-control" id="description" ng-model="vm.product.description">
       </div>
+
       <div class="form-group">
         <label for="description">Preço</label>
         <input type="number" step="0.01" class="form-control" id="price" ng-model="vm.product.price">
       </div>
-      <button type="button" class="btn btn-primary" ng-click="vm.save()">Salvar</button>
+
+      <button type="button" class="btn btn-primary"
+              ng-click="vm.save()">Salvar
+      </button>
+
       <button type="button" class="btn btn-primary"
               ng-show="vm.product.id"
-              ng-click="vm.product = {}">Novo</button>
+              ng-click="vm.product = {}">Novo
+      </button>
     </form>
   </div>
 
