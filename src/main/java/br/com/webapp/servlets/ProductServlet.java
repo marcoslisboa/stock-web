@@ -71,7 +71,7 @@ public class ProductServlet extends HttpServlet {
     }
 
     private String readJson(HttpServletRequest req) {
-        StringBuffer jb = new StringBuffer();
+        StringBuilder jb = new StringBuilder();
         String line = null;
 
         try {
