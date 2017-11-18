@@ -1,0 +1,5 @@
+/home/marcos/Projects/stock-web/src/main/java/br/com/webapp/servlets/ProductServlet.java
+/home/marcos/Projects/stock-web/src/main/java/br/com/webapp/dao/BaseDAO.java
+/home/marcos/Projects/stock-web/src/main/java/br/com/webapp/dao/ProductDAO.java
+/home/marcos/Projects/stock-web/src/main/java/br/com/webapp/dto/BasicResponse.java
+/home/marcos/Projects/stock-web/src/main/java/br/com/webapp/entities/Product.java
