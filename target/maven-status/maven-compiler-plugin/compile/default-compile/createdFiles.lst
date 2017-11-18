@@ -1,7 +1,0 @@
-br/com/webapp/entities/Product$ProductBuilder.class
-br/com/webapp/dto/BasicResponse$BasicResponseBuilder.class
-br/com/webapp/servlets/ProductServlet.class
-br/com/webapp/dao/ProductDAO.class
-br/com/webapp/entities/Product.class
-br/com/webapp/dao/BaseDAO.class
-br/com/webapp/dto/BasicResponse.class

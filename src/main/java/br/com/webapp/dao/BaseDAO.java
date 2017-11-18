@@ -15,7 +15,7 @@ public class BaseDAO {
 
     protected Connection getConnection() {
 
-        String url = "jdbc:postgresql://localhost:5432/store";
+        String url = "jdbc:postgresql://localhost:5432/estoque";
         Properties props = new Properties();
         props.setProperty("user", "postgres");
         props.setProperty("password", "postgres");
